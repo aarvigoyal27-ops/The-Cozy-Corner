@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Cozy Corner — Elevate Your Space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="theme-overlay" aria-hidden="true"></div>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="The Cozy Corner Home">
+        <span class="logo-mark">✦</span>
+        <div class="logo-text">
+          <span class="logo-primary">The Cozy Corner</span>
+          <span class="logo-tagline">Elevate your space, elevate your life.</span>
+        </div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#collections" class="nav-link">Collections</a></li>
+        <li><a href="#about" class="nav-link">Our Story</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle light/dark mode">
+          <span class="icon-sun" aria-hidden="true">☀</span>
+          <span class="icon-moon" aria-hidden="true">☽</span>
+        </button>
+        <button id="auth-btn" class="icon-btn nav-auth" aria-label="Sign in or create account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span id="auth-label">Sign In</span>
+        </button>
+        <button id="cart-toggle-btn" class="icon-btn cart-icon-btn" aria-label="Open cart" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span id="cart-count" class="cart-badge" aria-live="polite">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="hero" role="banner">
+    <div class="hero-bg-wrap">
+      <div class="hero-bg" id="hero-bg" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">New Collection — Spring 2025</p>
+      <h1 class="hero-headline">
+        Furniture that<br />
+        <em>tells a story.</em>
+      </h1>
+      <p class="hero-sub">
+        Handcrafted pieces for souls who believe a room is more than a room —<br />
+        it's a portrait of who you are.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#collections" class="btn btn-primary">Explore Collections</a>
+        <a href="#about" class="btn btn-ghost">Our Story →</a>
+      </div>
+    </div>
+    <div class="brightness-control" role="group" aria-label="Hero brightness control">
+      <label for="brightness-slider" class="brightness-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+        </svg>
+      </label>
+      <input type="range" id="brightness-slider" min="20" max="100" value="60"
+        aria-label="Adjust background brightness" aria-valuemin="20" aria-valuemax="100" aria-valuenow="60" />
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </header>
+
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Handcrafted Excellence</span><span class="sep">✦</span>
+      <span>Sustainably Sourced</span><span class="sep">✦</span>
+      <span>5-Year Warranty</span><span class="sep">✦</span>
+      <span>White Glove Delivery</span><span class="sep">✦</span>
+      <span>Bespoke Commissions</span><span class="sep">✦</span>
+      <span>Handcrafted Excellence</span><span class="sep">✦</span>
+      <span>Sustainably Sourced</span><span class="sep">✦</span>
+      <span>5-Year Warranty</span><span class="sep">✦</span>
+      <span>White Glove Delivery</span><span class="sep">✦</span>
+      <span>Bespoke Commissions</span><span class="sep">✦</span>
+    </div>
+  </div>
+
+  <section class="collections-section" id="collections" aria-labelledby="collections-heading">
+    <div class="section-header">
+      <p class="section-eyebrow">Curated Spaces</p>
+      <h2 class="section-title" id="collections-heading">Our Collections</h2>
+    </div>
+    <div class="filter-bar" role="group" aria-label="Filter by category">
+      <button class="filter-btn active" data-filter="all" aria-pressed="true">All Pieces</button>
+      <button class="filter-btn" data-filter="living-room" aria-pressed="false">Living Room</button>
+      <button class="filter-btn" data-filter="bedroom" aria-pressed="false">Bedroom</button>
+      <button class="filter-btn" data-filter="dining-room" aria-pressed="false">Dining Room</button>
+    </div>
+    <div id="loading-state" class="loading-grid" aria-live="polite" aria-label="Loading products">
+      <div class="skeleton-card" aria-hidden="true"></div>
+      <div class="skeleton-card" aria-hidden="true"></div>
+      <div class="skeleton-card" aria-hidden="true"></div>
+      <div class="skeleton-card" aria-hidden="true"></div>
+      <div class="skeleton-card" aria-hidden="true"></div>
+      <div class="skeleton-card" aria-hidden="true"></div>
+    </div>
+    <div id="product-grid" class="product-grid" role="list" aria-label="Product listings"></div>
+    <p id="no-results" class="no-results" hidden>No pieces found in this collection.</p>
+  </section>
+
+  <section class="editorial-banner" id="about" aria-labelledby="editorial-heading">
+    <div class="editorial-inner">
+      <div class="editorial-text">
+        <p class="section-eyebrow">Our Philosophy</p>
+        <h2 class="editorial-title" id="editorial-heading">
+          Every joint.<br />Every grain.<br /><em>Intentional.</em>
+        </h2>
+        <p class="editorial-body">
+          We believe furniture is architecture at the human scale. Each piece is designed by
+          independent craftspeople, built to outlive trends, and finished by hand in small batches.
+          No mass production. No compromises.
+        </p>
+        <a href="#collections" class="btn btn-primary">Shop the Edit</a>
+      </div>
+      <div class="editorial-visual" aria-hidden="true">
+        <div class="editorial-shape shape-1"></div>
+        <div class="editorial-shape shape-2"></div>
+        <div class="editorial-stat">
+          <span class="stat-num">1,200+</span>
+          <span class="stat-label">Pieces Crafted</span>
+        </div>
+        <div class="editorial-stat stat-2">
+          <span class="stat-num">14</span>
+          <span class="stat-label">Countries Delivered</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark large">✦</span>
+        <span class="footer-logo-text">The Cozy Corner</span>
+        <p class="footer-tagline">Elevate your space, elevate your life.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+        <a href="#">Careers</a>
+      </nav>
+      <p class="footer-copy">©️ 2025 The Cozy Corner. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FLASHCARD CART OVERLAY -->
+  <div id="cart-overlay" class="cart-overlay" role="dialog" aria-modal="true" aria-label="Shopping Cart" hidden>
+    <div class="cart-backdrop"></div>
+    <div class="cart-modal">
+      <div class="cart-header">
+        <h2 class="cart-title"><span class="logo-mark small">✦</span> Your Selections</h2>
+        <button id="cart-close-btn" class="icon-btn" aria-label="Close cart">✕</button>
+      </div>
+      <div class="card-deck-wrap">
+        <div id="card-deck" class="card-deck" role="list"></div>
+        <div id="cart-empty-state" class="cart-empty" hidden>
+          <span class="empty-icon" aria-hidden="true">✦</span>
+          <p>Your cart is empty.</p>
+          <p class="empty-sub">Add a piece to begin your collection.</p>
+        </div>
+      </div>
+      <div class="cart-controls" id="cart-controls">
+        <button id="shuffle-btn" class="btn btn-ghost shuffle-btn" aria-label="Shuffle deck">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="16 3 21 3 21 8"/><polyline points="4 20 21 3"/>
+            <polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/>
+          </svg>
+          Shuffle Deck
+        </button>
+        <button id="remove-top-btn" class="btn btn-ghost remove-btn" aria-label="Remove top card">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="3 6 5 6 21 6"/>
+            <path d="M19 6l-1 14H6L5 6"/>
+            <path d="M10 11v6M14 11v6"/>
+          </svg>
+          Remove Top
+        </button>
+      </div>
+      <div class="cart-footer-row" id="cart-footer-row">
+        <div class="cart-item-count"><span id="cart-item-count-label">0 items</span></div>
+        <div class="cart-total-wrap">
+          <span class="total-label">Grand Total</span>
+          <span id="cart-total" class="cart-total-price">₹0</span>
+        </div>
+        <button class="btn btn-primary checkout-btn" id="checkout-btn">Checkout →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUTH MODAL -->
+  <div id="auth-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-card">
+      <button id="modal-close-btn" class="icon-btn modal-close" aria-label="Close modal">✕</button>
+      <div class="auth-tabs" role="tablist">
+        <button class="auth-tab active" id="login-tab" role="tab" aria-selected="true" data-tab="login">Sign In</button>
+        <button class="auth-tab" id="signup-tab" role="tab" aria-selected="false" data-tab="signup">Create Account</button>
+      </div>
+      <!-- Login Panel -->
+      <div id="login-panel" class="auth-panel active" role="tabpanel">
+        <h2 class="modal-title" id="modal-title">Welcome back.</h2>
+        <p class="modal-sub">Sign in to continue your collection.</p>
+        <div class="form-group">
+          <label for="login-email" class="form-label">Email Address</label>
+          <input type="email" id="login-email" class="form-input" placeholder="you@example.com" autocomplete="email" aria-required="true" aria-describedby="login-email-error" />
+          <span id="login-email-error" class="field-error" role="alert" aria-live="polite"></span>
+        </div>
+        <div class="form-group">
+          <label for="login-password" class="form-label">Password</label>
+          <div class="input-wrap">
+            <input type="password" id="login-password" class="form-input" placeholder="Your password" autocomplete="current-password" aria-required="true" aria-describedby="login-password-error" />
+            <button type="button" class="toggle-pw-btn" data-target="login-password" aria-label="Toggle password visibility">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+          <span id="login-password-error" class="field-error" role="alert" aria-live="polite"></span>
+        </div>
+        <p id="login-form-error" class="form-error" role="alert" aria-live="polite"></p>
+        <button id="login-submit-btn" class="btn btn-primary full-width">Sign In</button>
+      </div>
+      <!-- Sign Up Panel -->
+      <div id="signup-panel" class="auth-panel" role="tabpanel" hidden>
+        <h2 class="modal-title">Join the circle.</h2>
+        <p class="modal-sub">Create your account to save pieces and track orders.</p>
+        <div class="form-group">
+          <label for="signup-name" class="form-label">Full Name</label>
+          <input type="text" id="signup-name" class="form-input" placeholder="Your full name" autocomplete="name" aria-required="true" aria-describedby="signup-name-error" />
+          <span id="signup-name-error" class="field-error" role="alert" aria-live="polite"></span>
+        </div>
+        <div class="form-group">
+          <label for="signup-email" class="form-label">Email Address</label>
+          <input type="email" id="signup-email" class="form-input" placeholder="you@example.com" autocomplete="email" aria-required="true" aria-describedby="signup-email-error" />
+          <span id="signup-email-error" class="field-error" role="alert" aria-live="polite"></span>
+        </div>
+        <div class="form-group">
+          <label for="signup-password" class="form-label">Password</label>
+          <div class="input-wrap">
+            <input type="password" id="signup-password" class="form-input" placeholder="8+ characters" autocomplete="new-password" aria-required="true" aria-describedby="signup-password-error" />
+            <button type="button" class="toggle-pw-btn" data-target="signup-password" aria-label="Toggle password visibility">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+          <span id="signup-password-error" class="field-error" role="alert" aria-live="polite"></span>
+          <div class="pw-strength-bar" aria-hidden="true">
+            <div id="pw-strength-fill" class="pw-strength-fill"></div>
+          </div>
+          <span id="pw-strength-label" class="pw-strength-label" aria-live="polite"></span>
+        </div>
+        <p id="signup-form-error" class="form-error" role="alert" aria-live="polite"></p>
+        <button id="signup-submit-btn" class="btn btn-primary full-width">Create Account</button>
+      </div>
+      <!-- Success -->
+      <div id="auth-success" class="auth-success" hidden>
+        <div class="success-icon" aria-hidden="true">✦</div>
+        <h3 id="success-message"></h3>
+        <p class="modal-sub" id="success-sub"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden>
+    <span id="toast-icon" aria-hidden="true">✦</span>
+    <span id="toast-message"></span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
